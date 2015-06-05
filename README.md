@@ -12,6 +12,10 @@ Add this to your app with:
 meteor add mixmax:underscore-updates
 ```
 
+## Functions Added
+
+* [mapObject](http://underscorejs.org/#mapObject)
+
 ## Contributing
 
 We welcome all contributions! This package only contains the functions needed by Mixmax at present,
