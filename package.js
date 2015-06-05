@@ -1,6 +1,6 @@
 Package.describe({
   name: 'mixmax:underscore-updates',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Extend Meteor\'s Underscore with selected methods from the latest standard version.',
   git: 'https://github.com/mixmaxhq/meteor-underscore-updates',
   documentation: 'README.md'
