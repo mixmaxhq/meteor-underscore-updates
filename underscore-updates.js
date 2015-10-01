@@ -58,20 +58,22 @@ var createPredicateIndexFinder = function(dir) {
   };
 };
 
-// Returns the first index on an array-like that passes a predicate test
-_.findIndex = createPredicateIndexFinder(1);
-_.findLastIndex = createPredicateIndexFinder(-1);
+_.mixin({
+  // Returns the first index on an array-like that passes a predicate test
+  findIndex: createPredicateIndexFinder(1),
+  findLastIndex: createPredicateIndexFinder(-1),
 
-// Returns the results of applying the iteratee to each element of the object
+  // Returns the results of applying the iteratee to each element of the object
   // In contrast to _.map it returns an object
-_.mapObject = function(obj, iteratee, context) {
-  iteratee = cb(iteratee, context);
-  var keys = _.keys(obj),
+  mapObject: function(obj, iteratee, context) {
+    iteratee = cb(iteratee, context);
+    var keys = _.keys(obj),
     length = keys.length,
     results = {};
-  for (var index = 0; index < length; index++) {
-    var currentKey = keys[index];
-    results[currentKey] = iteratee(obj[currentKey], currentKey, obj);
+    for (var index = 0; index < length; index++) {
+      var currentKey = keys[index];
+      results[currentKey] = iteratee(obj[currentKey], currentKey, obj);
+    }
+    return results;
   }
-  return results;
-};
+});
